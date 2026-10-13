@@ -1,2 +1,19 @@
 # ExpenseLens
-Expense classifier and cash-flow dashboard for a small business, built with Python, scikit-learn and Streamlit. Uses synthetic data only.
+How can a small business categorize expenses faster, flag uncertain ones for review, and see monthly cash flow?
+
+## Why it matters
+
+## Demo
+
+## How it works
+
+## Data
+All data is synthetic (photography business). No real transactions.
+
+## Results
+
+## Limitations
+
+## AI assistance
+
+## Run it
