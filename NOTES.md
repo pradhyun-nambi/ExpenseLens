@@ -21,3 +21,11 @@
 - Learned: a baseline is the score a smarter model has to beat. Keyword rules are precise but narrow: they're right when they match, but have no answer for vague merchant names. Also learned to run a module with python -m src.evaluate_baseline.
 - Result: baseline got 93.3% overall (195 of 209 labeled expenses). All 14 misses were vague merchants (AMZN, Walmart, PayPal, SQ) that the rules marked unknown, with no wrong guesses. Caveat: I wrote the rules knowing the data, so this is optimistic. Day 4 tests on unfamiliar merchants.
 
+
+## Oct 14, 2026 - Day 4
+- Built src/model.py (dedupe, split, TF-IDF + logistic regression), src/compare_models.py, data/challenge_set.csv (40 unfamiliar merchants), and tests/test_model.py. All 23 tests pass.
+- Problem: a stray ^B got typed in front of a command, so PowerShell said python was not recognized. Cleared the line and retyped it.
+- Learned: remove duplicate descriptions before splitting so the model can't just memorize them. A challenge set of unfamiliar merchants shows how a model handles new data. A model can lose on familiar data and still win on unfamiliar data.
+- Result: test set (48 rows) baseline 91.7% vs model 85.4%. Challenge set (40 rows) baseline 5.0% vs model 55.0%. The model struggled most with software brand names. Small, synthetic samples, so treat these as directional.
+
+
