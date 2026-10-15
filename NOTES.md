@@ -29,3 +29,10 @@
 - Result: test set (48 rows) baseline 91.7% vs model 85.4%. Challenge set (40 rows) baseline 5.0% vs model 55.0%. The model struggled most with software brand names. Small, synthetic samples, so treat these as directional.
 
 
+## Oct 14, 2026 - Day 5
+- Built src/providers.py (keyword and TF-IDF providers with the same shape), src/classify.py (review flags, corrections, CSV export), a new app.py (classifier dropdown, review slider, editable table, spending chart, download button), data/demo_transactions.csv, and tests/test_classify.py plus tests/test_providers.py. All 34 tests pass.
+- Problem: I didn't have the two new test files yet, so I created tests/test_classify.py and tests/test_providers.py from the pasted code. I also had to work out that the category dropdown is edited by double-clicking the cell.
+- Learned: if every classifier returns a category and a confidence from 0 to 1, the app can swap classifiers without other changes. Low-confidence rows get flagged for a human, and keeping the original guess next to the edited category makes human corrections easy to see in the export.
+- Result: on the demo file (1 inflow, 10 expenses), 5 of 10 expenses were flagged at the 0.45 threshold (Delta, Skylum, Slack, Rode, Hertz). The model got 3 wrong (Skylum as travel, Slack as office supplies, Rode as marketing). I fixed all 3 in the table, Corrections made showed 3, and the downloaded CSV had corrected = True on exactly those rows. Delta and Hertz were flagged but already correct, and Gas - Sunoco scored 0.47, just above the cutoff. Caveat: I tuned the 0.45 threshold on the test set, so it is optimistic.
+
+
