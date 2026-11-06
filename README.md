@@ -9,7 +9,9 @@ A small-business owner or bookkeeper spends hours sorting bank-style transaction
 Live app: https://expenselens-hs66xne5xvilmhocp8kiy6.streamlit.app/
 
 <!-- Add a screenshot: save it as docs/screenshot.png, then uncomment the next line -->
-<!-- ![Dashboard screenshot](docs/screenshot.png) -->
+![Dashboard](docs/dashboard.png)
+
+![Review table](docs/review-table.png)
 
 Try it with `data/demo_transactions.csv` (1 inflow, 10 expenses).
 
@@ -73,3 +75,4 @@ Reproduce the results:
 python -m src.evaluate_baseline
 python -m src.compare_models
 ```
+
